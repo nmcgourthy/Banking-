@@ -1,0 +1,100 @@
+package Banking;
+import java.util.Scanner;
+public class Banking {
+	public static void main(String[] args) {
+	
+		Scanner Username_creation = new Scanner(System.in);
+		Scanner Password_creation = new Scanner(System.in);
+		
+		System.out.print("Please create a username: ");
+		
+		String username;
+		String password;
+		username = Username_creation.nextLine();
+		
+		System.out.print("Please create a password: ");
+		
+		password = Password_creation.nextLine();
+		
+		
+			
+		Scanner Username_entered = new Scanner(System.in);
+		Scanner Password_entered = new Scanner(System.in);
+		
+		System.out.print("Please enter your username and password: ");
+		
+		String Username;
+		String Password;
+		Boolean success;
+		Username = Username_entered.nextLine();
+		Password = Password_entered.nextLine();
+		
+		if (Username.equals(username) && Password.equals(password)) {
+			System.out.println("Correct, welcome!");
+			success = true;
+		} else {
+			System.out.println("Incorrect username or password, please retry");
+			success = false;
+		}
+			double bal;
+			bal = 0;
+			while (success == true) {
+				
+	
+				System.out.println("Your balance is: " + bal);
+				
+				boolean deposit;
+				boolean withdraw;
+				
+				Scanner user_deposit = new Scanner(System.in);
+				Scanner user_withdraw = new Scanner(System.in);
+				
+				System.out.println("Deposit? (true or false): ");
+				
+				deposit = user_deposit.nextBoolean();
+				
+				if (deposit == true) {
+					double deposit_amount;
+					System.out.println("Enter deposit amount: ");
+					Scanner dep_amount = new Scanner(System.in);
+					deposit_amount = dep_amount.nextDouble();
+					bal += deposit_amount;
+					
+				} else {
+					
+				}
+				
+				System.out.print("Withdraw? (true or false): ");
+				
+				withdraw = user_withdraw.nextBoolean();
+				
+				if (withdraw == true) {
+					double withdraw_amount;
+					System.out.println("Enter withdrawl amount: ");
+					Scanner withdrawl_amount = new Scanner(System.in);
+					withdraw_amount = withdrawl_amount.nextDouble();
+					bal -= withdraw_amount;
+				}
+				
+				boolean user_exit;
+				Scanner exit = new Scanner(System.in);
+				System.out.println("log out(true or false)");
+				user_exit = exit.nextBoolean();
+				
+				if (user_exit != true)
+					System.out.println("Continue!");
+				else {
+					System.out.println("Logged out! your remaining balance is: " + bal);
+					break;
+				}
+				
+				
+		}
+		
+		
+		
+		
+			
+								
+		}
+	}
